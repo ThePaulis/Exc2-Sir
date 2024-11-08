@@ -14,7 +14,9 @@ app.use(express.static('sampledemo'));
 
 app.use(express.static('public/'));
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://exc2-sir.onrender.com' 
+}));
 app.use(express.json());
 
 //ROUTES
@@ -127,7 +129,8 @@ app.delete('/Livros/Delete/:id', async (req, res) => {
     }
 });
 
-
-app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
+
