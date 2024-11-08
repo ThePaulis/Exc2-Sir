@@ -20,6 +20,18 @@ app.use(cors({
 app.use(express.json());
 
 //ROUTES
+app.get('/', (req, res) => {
+    const aboutPagePath = path.resolve('public', 'Index.html');
+    if (aboutPagePath){
+        res.status(200).sendFile(aboutPagePath);
+
+    }else {
+        res.status(400).send('Not found');
+    }
+});
+
+
+
 app.get('/about', (req, res) => {
     const aboutPagePath = path.resolve('public', 'about.html');
     if (aboutPagePath){
