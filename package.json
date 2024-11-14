@@ -4,7 +4,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.1",
-    "lowdb": "^7.0.1"
+    "lowdb": "^7.0.1",
+
   },
   "main": "Routes-Setups.js",
   "type": "module",
