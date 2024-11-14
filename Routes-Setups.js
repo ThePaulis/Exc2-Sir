@@ -10,29 +10,10 @@ const db = await JSONFilePreset('Livros.json', defaultData);
 
 const app = express();
 app.use(express.static('public'));
-app.use(express.static('sampledemo'));
-
-app.use(express.static('public/'));
-
-app.use(cors({
-    origin: 'https://exc2-sir.onrender.com' 
-}));
+app.use(cors());
 app.use(express.json());
 
 //ROUTES
-
-app.get('/', (req, res) => {
-    const aboutPagePath = path.resolve('public', 'Index.html');
-    if (aboutPagePath){
-        res.status(200).sendFile(aboutPagePath);
-
-    }else {
-        res.status(400).send('Not found');
-    }
-});
-
-
-
 app.get('/about', (req, res) => {
     const aboutPagePath = path.resolve('public', 'about.html');
     if (aboutPagePath){
@@ -142,8 +123,7 @@ app.delete('/Livros/Delete/:id', async (req, res) => {
     }
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
 
+app.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+});

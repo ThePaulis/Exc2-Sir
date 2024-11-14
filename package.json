@@ -6,8 +6,10 @@
     "express": "^4.21.1",
     "lowdb": "^7.0.1"
   },
+  "main": "Routes-Setups.js",
+  "devDependencies": {},
   "scripts": {
-    "start": "node Routes-Setups.js",
-    "build": "npm install"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Routes-Setups.js"
   }
 }
